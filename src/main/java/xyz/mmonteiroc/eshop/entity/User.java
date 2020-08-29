@@ -55,6 +55,10 @@ public class User {
     @JsonManagedReference
     private Set<Order> buys = new HashSet<>();
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private Set<Review> reviews = new HashSet<>();
+
 
     public User() {
     }
@@ -113,6 +117,22 @@ public class User {
 
     public void setAccessPhoto(String accessPhoto) {
         this.accessPhoto = accessPhoto;
+    }
+
+    public Set<Order> getBuys() {
+        return buys;
+    }
+
+    public void setBuys(Set<Order> buys) {
+        this.buys = buys;
+    }
+
+    public Set<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(Set<Review> reviews) {
+        this.reviews = reviews;
     }
 
     @Override

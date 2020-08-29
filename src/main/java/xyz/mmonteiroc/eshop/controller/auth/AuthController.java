@@ -64,6 +64,7 @@ public class AuthController {
             throw new MandatoryParamsNotRecivedException("Params not recived");
 
         User toVerify = this.userManager.findByEmail(user.getEmail());
+        if (toVerify == null) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 
         boolean validated = this.userManager.validatePassword(user, toVerify);
         if (!validated) {

@@ -3,6 +3,7 @@ package xyz.mmonteiroc.eshop.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import javax.annotation.PostConstruct;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
